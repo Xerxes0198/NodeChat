@@ -1,3 +1,5 @@
+//http://arminboss.de/2013/tutorial-how-to-create-a-basic-chat-with-node-js/
+
 var http = require('http');
 var fs = require('fs');
 
