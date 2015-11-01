@@ -27,3 +27,13 @@ var app = http.createServer(function(request, response)
 }).listen(1337);
 
 var io = require('socket.io').listen(app);
+
+
+io.sockets.on('connection', function(socket)
+{
+  socket.on('message_to_server', function(data)
+  {
+    io.sockets.emit("message_to_client", {message : data["message"]});
+  });
+
+});
