@@ -3,15 +3,27 @@
 var http = require('http');
 var fs = require('fs');
 
+var debug = true;
 
 //Create http server and set a response for callback function
 var app = http.createServer(function(request, response)
 {
+
+  console.log("Request received.");
+
   fs.readFile("client.html", 'utf-8', function(error, data)
   {
     response.writeHead(200, {'Content-Type' : 'text/html'});
     response.write(data);
     response.end();
+
+    //Log data
+    if(debug == true)
+    {
+      console.log(data);
+    }
   });
 
 }).listen(1337);
+
+var io = require('socket.io').listen(app);
