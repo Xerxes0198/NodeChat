@@ -35,5 +35,4 @@ io.sockets.on('connection', function(socket)
   {
     io.sockets.emit("message_to_client", {message : data["message"]});
   });
-
 });
