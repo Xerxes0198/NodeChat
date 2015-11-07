@@ -28,7 +28,6 @@ var app = http.createServer(function(request, response)
 
 var io = require('socket.io').listen(app);
 
-
 io.sockets.on('connection', function(socket)
 {
   socket.on('message_to_server', function(data)
@@ -36,3 +35,11 @@ io.sockets.on('connection', function(socket)
     io.sockets.emit("message_to_client", {message : data["message"]});
   });
 });
+
+bob = function()
+{
+  console.log("Bob pressed");
+}
+
+
+bob();
