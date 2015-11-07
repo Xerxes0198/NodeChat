@@ -34,12 +34,4 @@ io.sockets.on('connection', function(socket)
   {
     io.sockets.emit("message_to_client", {message : data["message"]});
   });
-});
-
-bob = function()
-{
-  console.log("Bob pressed");
-}
-
-
-bob();
+});*/
